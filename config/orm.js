@@ -10,7 +10,7 @@ function printQuestionMarks(num) {
 }
 
 // Helper function for SQL syntax.
-function objToSql(ob) {
+function objToSQL(ob) {
   var arr = [];
 
   for (var key in ob) {

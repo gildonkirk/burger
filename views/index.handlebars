@@ -1,37 +1,28 @@
-  <h1>Burgers!</h1>
-
+  <h1>Burgers</h1>
+  <!-- burger list start -->
   <ul>
     {{#each burgers}}
       {{#unless this.devoured}}
         <li>
           {{this.burger_name}}
-
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="true">
-            <button type="submit">Devour</button>
-          </form>
+            <input type="button" data-id="{{this.id}}" class="devourBtn" name="devoured" value="Devour">
         </li>
       {{/unless}}
     {{/each}}
   </ul>
-
+<!-- burger list end -->
   <h2>Devoured!</h2>
-
+<!-- devoured list start -->
   <ul>
     {{#each burgers}}
       {{#if this.devoured}}
         <li>
           {{this.burger_name}}
-
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="false">
-            <button type="submit">Devour</button>
-          </form>
         </li>
       {{/if}}
     {{/each}}
   </ul>
-
+<!-- devoured list end -->
   <h2>Add a Burger</h2>
   <form class="create-update-form" action="/" method="POST">
 
@@ -42,3 +33,22 @@
 
     <button type="submit">Add Burger</button>
   </form>
+  <script type="text/javascript">
+
+$(document).on('click', '.devourBtn', function(event) {
+  console.log('Yay')
+  $.ajax({
+      method: 'PUT',
+      url: '/' + $(event.target).data('id'),
+      data: {
+        'devoured': 1,
+        '_method': 'PUT'
+      },
+      success: function (balls) {
+        console.log(balls);
+        location.reload();
+      }
+  });
+})
+
+  </script>

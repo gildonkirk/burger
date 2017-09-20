@@ -18,8 +18,8 @@ router.post('/', function(req, res) {
     'burger_name', 'devoured'
   ], [
     req.body.burger_name, false
-  ], function() {
-    res.redirect('/');
+  ], function(data) {
+    res.json(data);
   });
 });
 
@@ -28,10 +28,10 @@ router.put('/:id', function(req, res) {
 
   console.log('condition', condition);
 
-  cat.update({
+  burgers.update({
     devoured: req.body.devoured
-  }, condition, function() {
-    res.redirect('/');
+  }, condition, function(data) {
+    res.json(data);
   });
 });
 
