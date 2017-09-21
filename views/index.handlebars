@@ -1,5 +1,12 @@
-  <h1>Burgers</h1>
-  <!-- burger list start -->
+<header class="container">
+  <div class="row">
+    <h1 class="title col-xs-12">Eat-Da-Burger</h1>
+  </div>
+</header>
+
+<!-- burger list start -->
+<div class="container burgerList" id="undevBurgers">
+  <h2>Burgers</h2>
   <ul>
     {{#each burgers}}
       {{#unless this.devoured}}
@@ -10,10 +17,13 @@
       {{/unless}}
     {{/each}}
   </ul>
+</div>
 <!-- burger list end -->
-  <h2>Devoured!</h2>
+
 <!-- devoured list start -->
-  <ul>
+<div class="container burgerList" id="devBurgers">
+  <h2>Devoured</h2>
+  <ul class="devouredList">
     {{#each burgers}}
       {{#if this.devoured}}
         <li>
@@ -22,18 +32,21 @@
       {{/if}}
     {{/each}}
   </ul>
+</div>
 <!-- devoured list end -->
+
+<div class="container burgerForm">
   <h2>Add a Burger</h2>
   <form class="create-update-form" action="/" method="POST">
-
     <div class="form-group">
       <label for="ca">Burger Name:</label>
       <input type="text" id="ca" name="burger_name">
     </div>
-
     <button type="submit">Add Burger</button>
   </form>
-  <script type="text/javascript">
+</div>
+
+<script type="text/javascript">
 
 $(document).on('click', '.devourBtn', function(event) {
   console.log('Yay')
@@ -45,10 +58,14 @@ $(document).on('click', '.devourBtn', function(event) {
         '_method': 'PUT'
       },
       success: function (balls) {
-        console.log(balls);
-        location.reload();
+        var $parent = $(event.target).parent();
+        var newList = $parent[0].innerText;
+
+        console.log(newList);
+        $('<li>' + newList + '</li>').appendTo(".devouredList");
+        $parent.remove();
       }
   });
 })
 
-  </script>
+</script>

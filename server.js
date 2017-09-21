@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var path = require('path');
 
 var port = 3600;
 
@@ -17,5 +18,6 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
+app.use(express.static(path.join(__dirname, '/views/assets/css')));
 
 app.listen(port);
