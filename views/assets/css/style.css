@@ -72,6 +72,11 @@ label, #ca {
   margin-right: 6px;
 }
 
+#ca {
+  border-radius: 9px;
+  border: 1.2px solid #459CE8;
+}
+
 .burgerForm {
   border: 6px solid #FF9C15;
   border-radius: 1.2rem;
