@@ -10,15 +10,15 @@ body {
   background-image: url("../images/memphis-colorful.png");
   border: 6px solid #6AE86C;
   padding: 0 0 16px 0;
-  margin: 16px 0;
+  margin: 10px 0;
   border-radius: 1.2rem;
 }
 
 .burgersListRow {
   background-image: url("../images/memphis-colorful.png");
-  border: 6px solid #;
+  border: 6px solid #6AE86C;
   border-radius: 1.2rem;
-  margin: 0;
+  margin: 0 0 30px 0;
 }
 
 .title {
@@ -31,6 +31,14 @@ body {
 
 .burgerListHead {
   text-align: center;
+  background-color: #FF9C15;
+  color: #ffffff;
+  border-radius: 20px;
+  padding-bottom: 6px;
+}
+
+.burgerList {
+  margin-top: 10px;
 }
 
 .burgerImg {
@@ -38,12 +46,55 @@ body {
 }
 
 button, .devourBtn {
-  border-radius: 2px;
-  color: #ffffff;
-  background-color: #6AE86C;
+  border-radius: 6px;
+  color: #222222;
+  background-color: #acfffb;
   border: none;
+  padding-bottom: 4px;
 }
 
 button:hover, .devourBtn:hover {
-  background-color: #56D17B;
+  background-color: #459CE8;
+  color: #ffffff;
+}
+
+.burgerName {
+  margin: 0 10px 3px 0;
+  float: left;
+}
+
+.listItem {
+  margin: 0 0 8px 0;
+}
+
+label, #ca {
+  float: left;
+  margin-right: 6px;
+}
+
+.burgerForm {
+  border: 6px solid #FF9C15;
+  border-radius: 1.2rem;
+  background-image: url("../images/memphis-colorful.png");
+  margin-bottom: 10px;
+}
+
+.create-update-form {
+  margin: 0 0 9px 0;
+}
+
+#undevBurgers {
+  padding-left: 20px;
+}
+
+#devBurgers {
+  padding-right: 20px;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+.addBurger {
+  margin-bottom: -5px;
 }

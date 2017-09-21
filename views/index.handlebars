@@ -7,6 +7,17 @@
   </div>
 </div>
 
+<div class="container burgerForm">
+  <h2 class="addBurger">Add a Burger</h2>
+  <form class="create-update-form" action="/" method="POST">
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="burger_name">
+    </div>
+    <button type="submit">Add Burger</button>
+  </form>
+</div>
+
 <div class="row burgersListRow">
   <!-- burger list start -->
   <div class="col-sm-6 burgerList" id="undevBurgers">
@@ -14,8 +25,8 @@
     <ul>
       {{#each burgers}}
         {{#unless this.devoured}}
-          <li>
-            {{this.burger_name}}
+          <li class="listItem">
+            <p class="burgerName">{{this.burger_name}}</p>
               <input type="button" data-id="{{this.id}}" class="devourBtn" name="devoured" value="Devour">
           </li>
         {{/unless}}
@@ -30,25 +41,14 @@
     <ul class="devouredList">
       {{#each burgers}}
         {{#if this.devoured}}
-          <li>
-            {{this.burger_name}}
+          <li class="listItem">
+            <p class="burgerName">{{this.burger_name}}</p>
           </li>
         {{/if}}
       {{/each}}
     </ul>
   </div>
   <!-- devoured list end -->
-</div>
-
-<div class="container burgerForm">
-  <h2>Add a Burger</h2>
-  <form class="create-update-form" action="/" method="POST">
-    <div class="form-group">
-      <label for="ca">Burger Name:</label>
-      <input type="text" id="ca" name="burger_name">
-    </div>
-    <button type="submit">Add Burger</button>
-  </form>
 </div>
 
 <script type="text/javascript">
