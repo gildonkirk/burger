@@ -1,39 +1,44 @@
-<header class="container">
-  <div class="row">
-    <h1 class="title col-xs-12">Eat-Da-Burger</h1>
+<div class="jumbotron">
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <img src="/images/burger.png" class="burgerImg img-fluid center-block" alt="Responsive image">
+      <header class="title">Eat-Da-Burger</header>
+    </div>
   </div>
-</header>
-
-<!-- burger list start -->
-<div class="container burgerList" id="undevBurgers">
-  <h2>Burgers</h2>
-  <ul>
-    {{#each burgers}}
-      {{#unless this.devoured}}
-        <li>
-          {{this.burger_name}}
-            <input type="button" data-id="{{this.id}}" class="devourBtn" name="devoured" value="Devour">
-        </li>
-      {{/unless}}
-    {{/each}}
-  </ul>
 </div>
-<!-- burger list end -->
 
-<!-- devoured list start -->
-<div class="container burgerList" id="devBurgers">
-  <h2>Devoured</h2>
-  <ul class="devouredList">
-    {{#each burgers}}
-      {{#if this.devoured}}
-        <li>
-          {{this.burger_name}}
-        </li>
-      {{/if}}
-    {{/each}}
-  </ul>
+<div class="row burgersListRow">
+  <!-- burger list start -->
+  <div class="col-sm-6 burgerList" id="undevBurgers">
+    <h2 class="burgerListHead">Burgers</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <li>
+            {{this.burger_name}}
+              <input type="button" data-id="{{this.id}}" class="devourBtn" name="devoured" value="Devour">
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <!-- burger list end -->
+
+  <!-- devoured list start -->
+  <div class="col-sm-6 burgerList" id="devBurgers">
+    <h2 class="burgerListHead">Devoured</h2>
+    <ul class="devouredList">
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li>
+            {{this.burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  <!-- devoured list end -->
 </div>
-<!-- devoured list end -->
 
 <div class="container burgerForm">
   <h2>Add a Burger</h2>

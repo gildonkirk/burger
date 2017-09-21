@@ -18,6 +18,6 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
-app.use(express.static(path.join(__dirname, '/views/assets/css')));
+app.use(express.static(path.join(__dirname, '/views/assets')));
 
 app.listen(port);

@@ -1,3 +1,36 @@
-/*.title {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/wormz.png");
+}
+
+.jumbotron {
+  background-image: url("../images/memphis-colorful.png");
+  border: 6px solid #6AE86C;
+  padding: 0 0 16px 0;
+  margin: 16px 0;
+  border-radius: 1.2rem;
+}
+
+.burgersListRow {
+  background-image: url("../images/memphis-colorful.png");
+  border: 6px solid #6AE86C;
+  border-radius: 1.2rem;
+  margin: 0;
+}
+
+.title {
+  font-size: 32pt;
+  line-height: 1em;
+  margin: -5px 0 5px 0;
+}
+
+.burgerListHead {
   text-align: center;
-}*/
+}
+
+.burgerImg {
+  width: 170px;
+}
