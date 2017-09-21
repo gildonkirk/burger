@@ -16,15 +16,17 @@ body {
 
 .burgersListRow {
   background-image: url("../images/memphis-colorful.png");
-  border: 6px solid #6AE86C;
+  border: 6px solid #;
   border-radius: 1.2rem;
   margin: 0;
 }
 
 .title {
+  font-family: 'Fredoka One', cursive;
   font-size: 32pt;
   line-height: 1em;
   margin: -5px 0 5px 0;
+  color: #FF9C15;
 }
 
 .burgerListHead {
@@ -33,4 +35,15 @@ body {
 
 .burgerImg {
   width: 170px;
+}
+
+button, .devourBtn {
+  border-radius: 2px;
+  color: #ffffff;
+  background-color: #6AE86C;
+  border: none;
+}
+
+button:hover, .devourBtn:hover {
+  background-color: #56D17B;
 }

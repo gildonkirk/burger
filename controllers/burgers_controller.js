@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
   ], [
     req.body.burger_name, false
   ], function(data) {
-    res.json(data);
+    res.redirect('/');
   });
 });
 
